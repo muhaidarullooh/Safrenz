@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.gojek_clone">
+    package="com.example.safrenz">
    <application
-        android:label="gojek_clone"
+        android:label="safrenz"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

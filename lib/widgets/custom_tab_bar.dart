@@ -21,7 +21,7 @@ class _CustomTabBarState extends State<CustomTabBar> {
   bool iconColor = false;
   final List<Tab> tabs = const [
     Tab(
-      icon: Icon(Icons.people, color: Colors.green),
+      icon: Icon(Icons.people, color: Colors.blue),
       text: 'Home',
     ),
     Tab(

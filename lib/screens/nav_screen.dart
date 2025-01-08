@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:safrenz/screens/account.dart';
 import 'screens.dart';
-import 'package:gojek_clone/widgets/widgets.dart';
+import 'package:safrenz/widgets/s_r_icon_icons.dart';
+import 'package:safrenz/screens/activity.dart';
+import 'package:safrenz/screens/home.dart';
 
 class NavScreen extends StatefulWidget {
   const NavScreen({Key? key}) : super(key: key);
@@ -10,77 +13,63 @@ class NavScreen extends StatefulWidget {
 }
 
 class _NavScreenState extends State<NavScreen> {
-  final List<Widget> _screens = const [
-    Home(),
-    Scaffold(),
-    Scaffold(),
-    Scaffold(),
+  int _selectedScreenIndex = 0;
+
+  final List _screens = [
+    {"screen": const Home(), "title": "Home"},
+    {"screen": const activity(), "title": "Activity"},
+    {"screen": const Account(), "title": "Account"},
   ];
 
-  final List<IconData> _icons = [
-    Icons.home,
-    Icons.home,
-    Icons.home,
-    Icons.home,
-  ];
+  void _selectScreen(int index) {
+    setState(() {
+      _selectedScreenIndex = index;
+    });
+  }
 
-  final List<Text> _texts = const [
-    Text('Home'),
-    Text('Promo'),
-    Text('Orders'),
-    Text('Chat'),
-  ];
-
-  TabBar get _tabBar => const TabBar(
-        labelColor: Colors.green, //<-- selected text color
-        unselectedLabelColor: Colors.black, //<-- Unselected text color
-        indicator: BoxDecoration(
-          border: Border(
-            top: BorderSide(color: Colors.green, width: 3),
-          ),
-        ),
-        tabs: [
-          Tab(
-            icon: ImageIcon(
-              AssetImage('assets/images/beranda.png'),
-            ),
-            text: 'Home',
-          ),
-          Tab(
-            icon: ImageIcon(
-              AssetImage('assets/images/promo.png'),
-            ),
-            text: 'Promos',
-          ),
-          Tab(
-            icon: ImageIcon(
-              AssetImage('assets/images/pesanan.png'),
-            ),
-            text: 'Orders',
-          ),
-          Tab(
-            icon: ImageIcon(
-              AssetImage('assets/images/chat.png'),
-            ),
-            text: 'Chat',
-          )
-        ],
-      );
-
-  int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 4,
-      child: Scaffold(
-        body: IndexedStack(
-          index: _selectedIndex,
-          children: _screens,
-        ),
-        bottomNavigationBar: Padding(
-          padding: const EdgeInsets.only(bottom: 10, top: 0),
-          child: _tabBar,
-        ),
+    return Scaffold(
+      // appBar: AppBar(
+      //   title: Text(_screens[_selectedScreenIndex]["title"]),
+      // ),
+      body: _screens[_selectedScreenIndex]["screen"],
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        elevation: 10,
+        backgroundColor: Colors.white,
+        selectedItemColor: Color(0xFF0B0020),
+        currentIndex: _selectedScreenIndex,
+        onTap: _selectScreen,
+        items: const [
+          BottomNavigationBarItem(
+              icon: Padding(
+                padding: EdgeInsets.only(
+                  bottom: 2.0,
+                  top: 7.0,
+                ),
+                child: Icon(SRIcon.home),
+              ),
+              label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Padding(
+                padding: EdgeInsets.only(
+                  bottom: 2.0,
+                  top: 7.0,
+                ),
+                child: Icon(SRIcon.message),
+              ),
+              label: 'Komunikasi'),
+          BottomNavigationBarItem(
+              icon: Padding(
+                padding: const EdgeInsets.only(
+                  bottom: 2.0,
+                  top: 5.0,
+                ),
+                child: Icon(SRIcon.user),
+              ),
+              label: 'Account'),
+        ],
       ),
     );
   }

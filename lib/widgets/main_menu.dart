@@ -1,235 +1,154 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class MainMenu extends StatelessWidget {
   const MainMenu({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10),
-      child: Column(
+    return Container(
+      padding: EdgeInsets.fromLTRB(16, 16, 16, 16),
+      color: Colors.transparent,
+      // height: 150,
+      child: Stack(
+        // scrollDirection: Axis.horizontal,
+        // clipBehavior: Clip.none,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
+          Container(
+            // height: 150,
+            // width: 340,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 16),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  GestureDetector(
-                    onTap: () => print('GoRide'),
+                  TextButton(
                     child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.transparent,
-                          borderRadius: BorderRadius.circular(10)),
-                      height: 60,
-                      width: 60,
-                      child: Image.asset('assets/images/GoRide.png'),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  const Text('GoRide')
-                ],
-              ),
-              Column(
-                children: [
-                  GestureDetector(
-                    onTap: () => print('GoCar'),
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.transparent,
-                          borderRadius: BorderRadius.circular(10)),
-                      height: 60,
-                      width: 60,
-                      child: Image.asset('assets/images/GoCar.png'),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  const Text('GoCar')
-                ],
-              ),
-              Column(
-                children: [
-                  GestureDetector(
-                    onTap: () => print('GoFood'),
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.transparent,
-                          borderRadius: BorderRadius.circular(10)),
-                      height: 60,
-                      width: 60,
-                      child: Image.asset('assets/images/GoFood.png'),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  const Text('GoFood')
-                ],
-              ),
-              Column(
-                children: [
-                  GestureDetector(
-                    onTap: () => print('GoSend'),
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.transparent,
-                          borderRadius: BorderRadius.circular(10)),
-                      height: 60,
-                      width: 60,
-                      child: Image.asset('assets/images/GoSend.png'),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  const Text('GoSend')
-                ],
-              ),
-            ],
-          ),
-          // ================================================== //
-          const SizedBox(
-            height: 10,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                children: [
-                  GestureDetector(
-                    onTap: () => print('GoMart'),
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.transparent,
-                          borderRadius: BorderRadius.circular(10)),
-                      height: 60,
-                      width: 60,
-                      child: Image.asset('assets/images/GoMart.png'),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  const Text('GoMart')
-                ],
-              ),
-              Column(
-                children: [
-                  GestureDetector(
-                    onTap: () => print('GoPulsa'),
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.transparent,
-                          borderRadius: BorderRadius.circular(10)),
-                      height: 60,
-                      width: 60,
-                      child: Image.asset('assets/images/GoPulsa.png'),
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  const Text('GoPulsa')
-                ],
-              ),
-              Column(
-                children: [
-                  GestureDetector(
-                    onTap: () => print('GoClub'),
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 214, 150, 235),
-                          borderRadius: BorderRadius.circular(10)),
-                      height: 50,
-                      width: 50,
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 5,
-                  ),
-                  const Text('GoClub')
-                ],
-              ),
-              Column(
-                children: [
-                  GestureDetector(
-                    onTap: () => print('More'),
-                    child: Container(
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 220, 228, 228),
-                          borderRadius: BorderRadius.circular(100),
+                      width: double.infinity,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            // horizontal: 16,
+                            // vertical: 16,
+                            ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      height: 36,
+                                      child: SvgPicture.asset(
+                                          'assets/images/menu_payslip.svg'),
+                                    ),
+                                    const SizedBox(
+                                      width: 16,
+                                    ),
+                                    const Text(
+                                      'Pembayaran',
+                                      style: TextStyle(
+                                          color: Colors.black, fontSize: 18),
+                                    )
+                                  ],
+                                ),
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  // mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SizedBox(
+                                      child: SvgPicture.asset(
+                                          'assets/images/iconarrowright.svg'),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
-                        height: 50,
-                        width: 50,
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 10, vertical: 12),
-                          child: Column(
-                            children: [
-                              Row(
-                                children: [
-                                  Container(
-                                    height: 13,
-                                    width: 13,
-                                    decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(100),
-                                        color:
-                                            Color.fromARGB(255, 105, 109, 119)),
-                                  ),
-                                  const SizedBox(
-                                    width: 3,
-                                  ),
-                                  Container(
-                                    height: 13,
-                                    width: 13,
-                                    decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(100),
-                                        color:
-                                            Color.fromARGB(255, 105, 109, 119)),
-                                  )
-                                ],
-                              ),
-                              Row(
-                                children: [
-                                  Container(
-                                    height: 13,
-                                    width: 13,
-                                    decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(100),
-                                        color:
-                                            Color.fromARGB(255, 105, 109, 119)),
-                                  ),
-                                  const SizedBox(
-                                    width: 3,
-                                  ),
-                                  Container(
-                                    height: 13,
-                                    width: 13,
-                                    decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(100),
-                                        color:
-                                            Color.fromARGB(255, 105, 109, 119)),
-                                  )
-                                ],
-                              )
-                            ],
-                          ),
-                        )),
+                      ),
+                    ),
+                    onPressed: () {
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) => detailattd()));
+                    },
                   ),
-                  const SizedBox(
-                    height: 5,
+                  Padding(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 10.0, horizontal: 14),
+                    child: Container(
+                      height: 1.0,
+                      // width: 130.0,
+                      color: Color.fromARGB(255, 238, 238, 238),
+                    ),
                   ),
-                  const Text('More')
+                  TextButton(
+                    child: Container(
+                      width: double.infinity,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(
+                            // horizontal: 16,
+                            // vertical: 16,
+                            ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      height: 36,
+                                      child: SvgPicture.asset(
+                                          'assets/images/complain.svg'),
+                                    ),
+                                    const SizedBox(
+                                      width: 16,
+                                    ),
+                                    const Text(
+                                      'Ajukan komplain',
+                                      style: TextStyle(
+                                          color: Colors.black, fontSize: 18),
+                                    )
+                                  ],
+                                ),
+                                Row(
+                                  crossAxisAlignment: CrossAxisAlignment.end,
+                                  // mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SizedBox(
+                                      child: SvgPicture.asset(
+                                          'assets/images/iconarrowright.svg'),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    onPressed: () {
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //         builder: (context) => detailattd()));
+                    },
+                  ),
                 ],
               ),
-            ],
+            ),
           ),
         ],
       ),

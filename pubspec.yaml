@@ -1,4 +1,4 @@
-name: gojek_clone
+name: safrenz
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -34,6 +34,9 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+  get: any
+   
+  flutter_svg: ^1.1.4
 
 dev_dependencies:
   flutter_test:
@@ -59,23 +62,37 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/GoCar.png
-    - assets/images/GoFood.png
-    - assets/images/GoMart.png
-    - assets/images/GoPulsa.png
-    - assets/images/GoRide.png
-    - assets/images/GoSend.png
-    - assets/images/gocluppoinbar.png
-    - assets/images/GO-CLUB1.png
-    - assets/images/icon gofood flat.png
-    - assets/images/icon voucher.png
-    - assets/images/driver1.jpeg
-    - assets/images/driver2.jpeg
-    - assets/images/beranda.png
-    - assets/images/chat.png
-    - assets/images/promo.png
-    - assets/images/pesanan.png
-    - assets/images/banner.png
+    - assets/images/
+    - assets/images/logsr.svg
+    - assets/images/logosafrenz.svg
+    - assets/images/imgback.png
+    - assets/images/avatar.png
+    - assets/images/il_empty.svg
+    - assets/images/camera.svg
+    - assets/images/imagekos.png
+    - assets/images/onb1.png
+    - assets/images/onb2.png
+    - assets/images/onb3.png
+    - assets/images/ktpsample.png
+    - assets/images/imagedevicelock.png
+  
+
+    - assets/images/ic_help.svg
+    - assets/images/ic_invite_user.svg
+    - assets/images/ic_language.svg
+    - assets/images/ic_myteam.svg
+    - assets/images/ic_pin_setting.svg
+    - assets/images/ic_rating.svg
+    - assets/images/ic_setting_company.svg
+    - assets/images/ic_chat.svg
+    - assets/images/ic_call.svg
+    - assets/images/ic_dari.svg
+    - assets/images/ic_google.svg
+    - assets/images/imagerequest.png
+
+   
+    
+    
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -83,6 +100,12 @@ flutter:
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
+
+  fonts:
+      - family: SRIcon
+        fonts:
+          - asset: assets/fonts/SRIcon.ttf
+          
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
